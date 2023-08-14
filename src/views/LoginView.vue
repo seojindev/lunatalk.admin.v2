@@ -1,8 +1,12 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const id = ref('')
 const password = ref('')
+
+const idRules = [(value: string) => !!value || '아이디를 입력해주세요.']
+
+const passwordRules = [(value: string) => !!value || '비밀번호를 입력해주세요.']
 </script>
 
 <template>
@@ -28,8 +32,13 @@ const password = ref('')
 
           <v-card-text>
             <v-form @submit.prevent>
-              <v-text-field v-model="id" label="id"></v-text-field>
-              <v-text-field v-model="password" label="password" type="password"></v-text-field>
+              <v-text-field v-model="id" label="id" :rules="idRules"></v-text-field>
+              <v-text-field
+                v-model="password"
+                label="password"
+                type="password"
+                :rules="passwordRules"
+              ></v-text-field>
               <v-btn type="submit" block class="mt-2">로그인</v-btn>
             </v-form>
           </v-card-text>
