@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
+import { useUserStore } from '../stores/user'
+const userStore = useUserStore()
 
 const id = ref('')
 const password = ref('')
@@ -31,7 +33,7 @@ const passwordRules = [(value: string) => !!value || '비밀번호를 입력해�
           </v-card-item>
 
           <v-card-text>
-            <v-form @submit.prevent>
+            <v-form @submit.prevent="userStore.login(id, password)">
               <v-text-field v-model="id" label="id" :rules="idRules"></v-text-field>
               <v-text-field
                 v-model="password"

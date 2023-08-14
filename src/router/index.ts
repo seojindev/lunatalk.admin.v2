@@ -2,13 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import Dashboard from '@/views/DashboardView.vue'
 import NotFound from '@/views/NotFound.vue'
+import { useUserStore } from '@/stores/user'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'login',
       component: LoginView
     },
     {
@@ -34,4 +35,22 @@ const router = createRouter({
   ]
 })
 
+router.beforeEach((to, from, next) => {
+  const userStore = useUserStore()
+
+  console.log(to, userStore.user)
+  if (to.name === 'login' && !userStore.user.isLogin) {
+    return next()
+  }
+
+  if (to.name === 'login' && userStore.user.isLogin) {
+    return next({ name: 'dashboard' })
+  }
+
+  if (to.name !== 'login' && !userStore.user.isLogin) {
+    return next({ name: 'login' })
+  }
+
+  return next()
+})
 export default router
