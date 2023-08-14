@@ -8,12 +8,20 @@ const password = ref('')
 <template>
   <v-container class="d-flex align-center flex-column h-100 justify-center">
     <v-row class="w-100 align-center" justify="center">
+      <RouterLink to="/" class="brand-logo">
+        <v-img
+          :width="100"
+          aspect-ratio="16/9"
+          cover
+          src="https://lunatalk.co.kr/_next/image?url=http%3A%2F%2Fadmin.lunatalk.co.kr%2Fstatic%2Fmedia%2Flogo.e0e49014f4ed6f070031.jpg&w=640&q=75"
+        />
+      </RouterLink>
       <v-col xl="4" sm="12" xs="12" lg="10" md="12">
         <v-card variant="plain">
           <v-card-item>
-            <v-card-title>Welcome to 루나톡!</v-card-title>
+            <v-card-title tag="p">Welcome to 루나톡!</v-card-title>
 
-            <v-card-subtitle
+            <v-card-subtitle tag="p"
               >Please sign-in to your account and start the adventure</v-card-subtitle
             >
           </v-card-item>
@@ -34,5 +42,16 @@ const password = ref('')
 <style scoped>
 * {
   color: #fff;
+}
+p {
+  overflow: visible;
+  white-space: wrap;
+}
+.brand-logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border-radius: 10%;
+  overflow: hidden;
 }
 </style>
