@@ -3,6 +3,7 @@ import { reactive } from 'vue'
 
 import { useRouter } from 'vue-router'
 import axios from 'axios'
+import { toast } from 'vue3-toastify'
 
 export const useUserStore = defineStore(
   'user',
@@ -28,8 +29,15 @@ export const useUserStore = defineStore(
 
           router.push('/dashboard')
         }
-      } catch (e) {
+      } catch (e: any) {
         console.log(e)
+        if (e.response.status >= 400 && e.response.status < 500) {
+          toast.warning('아이디와 비밀번호를 확인해주세요.', {
+            position: toast.POSITION.BOTTOM_CENTER
+          })
+        } else {
+          toast.error('서버 장애가 발생하였습니다.')
+        }
       }
     }
 
