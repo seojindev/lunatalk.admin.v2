@@ -15,17 +15,18 @@
 h1 {
   font-size: 150px;
   font-weight: 800;
-  color: #262626;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: -10px;
   margin-left: -20px;
 }
 h1 > span {
-  text-shadow: -8px 0 0 #fff;
+  text-shadow: -8px 0 0 #262626;
 }
 
-a {
-  color: #262626;
+a,
+p {
+  color: #fff;
   letter-spacing: -1px;
 }
 </style>
