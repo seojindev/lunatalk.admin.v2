@@ -7,6 +7,7 @@
       :value="item"
       :title="item.title"
       :active="item.isActive"
+      :href="item.link"
     ></v-list-item>
   </v-list>
 </template>
@@ -14,7 +15,7 @@
 <script lang="ts" setup>
 interface Props {
   subTitle: string
-  menuList: { title: string; icon?: string; isActive?: boolean }[]
+  menuList: { title: string; icon?: string; isActive?: boolean; link: string }[]
 }
 
 const props = defineProps<Props>()

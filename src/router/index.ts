@@ -5,6 +5,15 @@ import NotFound from '@/views/NotFound.vue'
 import { useUserStore } from '@/stores/user'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import AdminLayout from '@/layouts/AdminLayout.vue'
+import BadgeView from '@/views/product/BadgeView.vue'
+import CategoryView from '@/views/product/CategoryView.vue'
+import ProductView from '@/views/product/ProductView.vue'
+import ReviewView from '@/views/product/ReviewView.vue'
+import OrderView from '@/views/order/OrderView.vue'
+import UserView from '@/views/user/UserView.vue'
+import MainSlideView from '@/views/page/MainSlideView.vue'
+import NoticeView from '@/views/site/NoticeView.vue'
+import ServiceNoticeView from '@/views/site/ServiceNoticeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,18 +27,66 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: Dashboard,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/product/badge',
+      name: 'product/badge',
+      component: BadgeView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/product/category',
+      name: 'product/category',
+      component: CategoryView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/product/product',
+      name: 'product/product',
+      component: ProductView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/product/review',
+      name: 'product/review',
+      component: ReviewView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/order/list',
+      name: 'order/list',
+      component: OrderView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/user/list',
+      name: 'user/list',
+      component: UserView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/page/main-slide',
+      name: 'page/main-slide',
+      component: MainSlideView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/site/site-notice',
+      name: 'page/site-notice',
+      component: NoticeView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/site/service-notice',
+      name: 'site/service-notice',
+      component: ServiceNoticeView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/404',
       name: 'notFound',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: NotFound,
       meta: { layout: DefaultLayout }
     },
