@@ -7,9 +7,6 @@
           title="Lunatalk"
           subtitle="관리자"
         >
-          <template v-slot:append>
-            <v-btn size="small" variant="text" icon="mdi-menu-down"></v-btn>
-          </template>
         </v-list-item>
       </v-list>
 
@@ -17,6 +14,19 @@
       <nav v-for="(menu, i) in list" :key="i">
         <menu-item :sub-title="menu.title" :menu-list="menu.list"></menu-item>
       </nav>
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn
+            block
+            prepend-icon="mdi-logout"
+            variant="tonal"
+            class="text-none"
+            @click="userStore.logout"
+          >
+            Logout
+          </v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
 
     <v-app-bar>
@@ -44,6 +54,8 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import MenuItem from '@/components/common/MenuItem.vue'
 import ThemeToggleItem from '@/components/common/ThemeToggleItem.vue'
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
 const route = useRoute()
 const name = route.name || ''
 
