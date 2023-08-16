@@ -56,7 +56,7 @@ const isDisabled = loading.value
               ></v-text-field>
               <v-btn type="submit" block class="mt-2" height="56px" :disabled="isDisabled">
                 <LoadingItem v-if="loading" />
-                <span v-else style="color: #161d31">로그인</span>
+                <span v-else>로그인</span>
               </v-btn>
             </v-form>
           </v-card-text>
