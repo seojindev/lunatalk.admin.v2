@@ -15,7 +15,7 @@
 
       <v-divider></v-divider>
       <nav v-for="(menu, i) in list" :key="i">
-        <Menu-item :sub-title="menu.title" :menu-list="menu.list"></Menu-item>
+        <menu-item :sub-title="menu.title" :menu-list="menu.list"></menu-item>
       </nav>
     </v-navigation-drawer>
 
