@@ -34,7 +34,7 @@
 
 <style scoped>
 footer {
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 </style>
 

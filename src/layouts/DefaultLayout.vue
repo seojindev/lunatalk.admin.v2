@@ -9,4 +9,7 @@
 .wrap {
   height: inherit;
 }
+footer {
+  letter-spacing: -0.5px;
+}
 </style>
