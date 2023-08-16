@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useTheme } from 'vuetify'
 const theme = useTheme()
 const icon = computed(() =>
@@ -12,7 +12,15 @@ const icon = computed(() =>
 
 const toggleTheme = () => {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+  const themeName = theme.global.current.value.dark ? 'dark' : 'light'
+  localStorage.setItem('theme', themeName)
 }
+
+const getTheme = localStorage.getItem('theme')
+onMounted(() => {
+  if (!getTheme) return
+  theme.global.name.value = getTheme
+})
 </script>
 
 <style scoped></style>

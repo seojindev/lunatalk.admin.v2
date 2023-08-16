@@ -26,7 +26,7 @@
       <ThemeToggleItem />
     </v-app-bar>
 
-    <v-main class="h-100">
+    <v-main class="align-center d-flex h-100 justify-center">
       <slot />
     </v-main>
     <v-footer>©{{ new Date().getFullYear() }} - Created by Theo</v-footer>
@@ -125,3 +125,9 @@ const list = {
   }
 }
 </script>
+
+<style scoped>
+main {
+  height: inherit;
+}
+</style>
