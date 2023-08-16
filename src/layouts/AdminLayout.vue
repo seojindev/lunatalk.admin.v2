@@ -28,8 +28,15 @@
     <v-main>
       <slot />
     </v-main>
+    <v-footer class="pa-4">©{{ new Date().getFullYear() }} - Created by Theo</v-footer>
   </v-app>
 </template>
+
+<style scoped>
+footer {
+  letter-spacing: -1px;
+}
+</style>
 
 <script setup lang="ts">
 import { ref } from 'vue'
