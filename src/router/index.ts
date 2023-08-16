@@ -26,61 +26,61 @@ const router = createRouter({
     },
     {
       path: '/dashboard',
-      name: 'dashboard',
+      name: '대시보드',
       component: Dashboard,
       meta: { layout: AdminLayout }
     },
     {
       path: '/product/badge',
-      name: 'product/badge',
+      name: '배지 관리',
       component: BadgeView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/product/category',
-      name: 'product/category',
+      name: '카테고리 관리',
       component: CategoryView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/product/product',
-      name: 'product/product',
+      name: '상품 관리',
       component: ProductView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/product/review',
-      name: 'product/review',
+      name: '리뷰 관리',
       component: ReviewView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/order/list',
-      name: 'order/list',
+      name: '주문 목록',
       component: OrderView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/user/list',
-      name: 'user/list',
+      name: '유저 목록',
       component: UserView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/page/main-slide',
-      name: 'page/main-slide',
+      name: '메인 슬라이드 목록',
       component: MainSlideView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/site/site-notice',
-      name: 'page/site-notice',
+      name: '사이트 공지사항 목록',
       component: NoticeView,
       meta: { layout: AdminLayout }
     },
     {
       path: '/site/service-notice',
-      name: 'site/service-notice',
+      name: '서비스 공지사항 목록',
       component: ServiceNoticeView,
       meta: { layout: AdminLayout }
     },
@@ -111,11 +111,11 @@ router.beforeEach((to, from, next) => {
   }
 
   if (to.name === 'login' && userStore.user.isLogin) {
-    return next({ name: 'dashboard' })
+    return next('/dashboard')
   }
 
   if (to.name !== 'login' && !userStore.user.isLogin) {
-    return next({ name: 'login' })
+    return next('/')
   }
 
   return next()
