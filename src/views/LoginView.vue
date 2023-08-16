@@ -32,19 +32,24 @@ const isDisabled = loading.value
           <v-card-item class="pa-0">
             <v-card-title tag="p">Welcome to 루나톡!</v-card-title>
 
-            <v-card-subtitle tag="p"
-              >Please sign-in to your account and start the adventure</v-card-subtitle
-            >
+            <v-card-subtitle tag="p">계정 발급은 관리자에게 문의하세요.</v-card-subtitle>
           </v-card-item>
 
           <v-card-text class="pa-0">
             <v-form @submit.prevent="onSubmit">
-              <v-text-field v-model="id" label="id" :rules="idRules"></v-text-field>
+              <v-text-field
+                v-model="id"
+                label="id"
+                :rules="idRules"
+                variant="outlined"
+                class="my-4"
+              ></v-text-field>
               <v-text-field
                 v-model="password"
                 label="password"
                 type="password"
                 :rules="passwordRules"
+                variant="outlined"
               ></v-text-field>
               <v-btn
                 type="submit"
