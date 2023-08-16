@@ -25,10 +25,10 @@
       <v-app-bar-title>{{ name }}</v-app-bar-title>
     </v-app-bar>
 
-    <v-main>
+    <v-main class="h-100">
       <slot />
     </v-main>
-    <v-footer class="pa-4">©{{ new Date().getFullYear() }} - Created by Theo</v-footer>
+    <v-footer>©{{ new Date().getFullYear() }} - Created by Theo</v-footer>
   </v-app>
 </template>
 
