@@ -10,8 +10,4 @@ const userStore = useUserStore()
   </div>
 </template>
 
-<style>
-h1 {
-  color: #fff;
-}
-</style>
+<style></style>

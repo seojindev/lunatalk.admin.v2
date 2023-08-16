@@ -27,14 +27,6 @@ const isDisabled = loading.value
 <template>
   <v-container class="d-flex align-center flex-column h-100 justify-center">
     <v-row class="w-100 align-center" justify="center">
-      <RouterLink to="/" class="brand-logo">
-        <v-img
-          :width="100"
-          aspect-ratio="16/9"
-          cover
-          src="https://lunatalk.co.kr/_next/image?url=http%3A%2F%2Fadmin.lunatalk.co.kr%2Fstatic%2Fmedia%2Flogo.e0e49014f4ed6f070031.jpg&w=640&q=75"
-        />
-      </RouterLink>
       <v-col xl="4" sm="12" xs="12" lg="10" md="12" class="pa-0">
         <v-card variant="plain">
           <v-card-item class="pa-0">
@@ -54,7 +46,14 @@ const isDisabled = loading.value
                 type="password"
                 :rules="passwordRules"
               ></v-text-field>
-              <v-btn type="submit" block class="mt-2" height="56px" :disabled="isDisabled">
+              <v-btn
+                type="submit"
+                block
+                color="primary"
+                class="mt-2"
+                height="56px"
+                :disabled="isDisabled"
+              >
                 <LoadingItem v-if="loading" />
                 <span v-else>로그인</span>
               </v-btn>
@@ -67,18 +66,8 @@ const isDisabled = loading.value
 </template>
 
 <style scoped>
-* {
-  color: #fff;
-}
 p {
   overflow: visible;
   white-space: wrap;
-}
-.brand-logo {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  border-radius: 10%;
-  overflow: hidden;
 }
 </style>

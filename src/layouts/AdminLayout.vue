@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire" theme="dark">
+  <v-app id="inspire">
     <v-navigation-drawer v-model="drawer">
       <v-list>
         <v-list-item
@@ -20,9 +20,10 @@
     </v-navigation-drawer>
 
     <v-app-bar>
-      <v-app-bar-nav-icon @click="drawer = !drawer" color="#fff"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-app-bar-title>{{ name }}</v-app-bar-title>
+      <ThemeToggleItem />
     </v-app-bar>
 
     <v-main class="h-100">
@@ -42,6 +43,7 @@ footer {
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import MenuItem from '@/components/common/MenuItem.vue'
+import ThemeToggleItem from '@/components/common/ThemeToggleItem.vue'
 const route = useRoute()
 const name = route.name || ''
 
