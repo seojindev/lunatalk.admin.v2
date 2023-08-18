@@ -4,6 +4,8 @@ import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { toast } from 'vue3-toastify'
+import instance from '@/utils/axios'
+import { setlogin } from '@/utils/api/login'
 
 export const useUserStore = defineStore(
   'user',
@@ -13,15 +15,7 @@ export const useUserStore = defineStore(
 
     async function login(id: string, password: string) {
       try {
-        const response = await axios.post(
-          'https://service.lunatalk.co.kr/api/admin-front/v1/auth/login',
-          { login_id: id, login_password: password },
-          {
-            headers: {
-              'Request-Client-Type': '0100040'
-            }
-          }
-        )
+        const response = await setlogin({ login_id: id, login_password: password })
         if (response.status === 200) {
           user.isLogin = true
           user.accessToken = response.data.result.access_token

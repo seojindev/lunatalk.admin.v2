@@ -1,12 +1,9 @@
-<script setup lang="ts">
-import { useUserStore } from '../stores/user'
-const userStore = useUserStore()
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="d-flex justify-center align-center w-100">
+  <div class="d-flex flex-column justify-center align-center w-100">
     <h1 class="">dashboard</h1>
-    <v-btn @click="userStore.logout">로그아웃</v-btn>
+    <p>준비중</p>
   </div>
 </template>
 
