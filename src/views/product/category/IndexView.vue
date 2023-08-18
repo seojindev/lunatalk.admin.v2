@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { getCategoryList, deleteCategory } from '../../utils/api/product'
+import { getCategoryList, deleteCategory } from '../../../utils/api/product'
 import { useRouter } from 'vue-router'
 import ModalItem from '@/components/common/ModalItem.vue'
 import { toast } from 'vue3-toastify'

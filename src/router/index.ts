@@ -6,7 +6,7 @@ import { useUserStore } from '@/stores/user'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import AdminLayout from '@/layouts/AdminLayout.vue'
 import BadgeView from '@/views/product/BadgeView.vue'
-import CategoryView from '@/views/product/CategoryView.vue'
+import CategoryView from '@/views/product/category/IndexView.vue'
 import ProductView from '@/views/product/ProductView.vue'
 import ReviewView from '@/views/product/ReviewView.vue'
 import OrderView from '@/views/order/OrderView.vue'
@@ -14,6 +14,7 @@ import UserView from '@/views/user/UserView.vue'
 import MainSlideView from '@/views/page/MainSlideView.vue'
 import NoticeView from '@/views/site/NoticeView.vue'
 import ServiceNoticeView from '@/views/site/ServiceNoticeView.vue'
+import CategoryAddView from '@/views/product/category/AddView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,12 @@ const router = createRouter({
       path: '/product/category',
       name: '카테고리 관리',
       component: CategoryView,
+      meta: { layout: AdminLayout }
+    },
+    {
+      path: '/product/category/create',
+      name: '카테고리 생성',
+      component: CategoryAddView,
       meta: { layout: AdminLayout }
     },
     {
