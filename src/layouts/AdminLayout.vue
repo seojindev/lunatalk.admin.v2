@@ -32,7 +32,7 @@
     <v-app-bar>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>{{ name }}</v-app-bar-title>
+      <v-app-bar-title class="appBarTitle text-body-1">{{ name }}</v-app-bar-title>
       <ThemeToggleItem />
     </v-app-bar>
 
