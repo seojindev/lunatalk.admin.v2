@@ -2,9 +2,7 @@ import { defineStore } from 'pinia'
 import { reactive } from 'vue'
 
 import { useRouter } from 'vue-router'
-import axios from 'axios'
 import { toast } from 'vue3-toastify'
-import instance from '@/utils/axios'
 import { setlogin } from '@/utils/api/login'
 
 export const useUserStore = defineStore(

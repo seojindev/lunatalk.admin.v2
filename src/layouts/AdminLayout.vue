@@ -36,7 +36,7 @@
       <ThemeToggleItem />
     </v-app-bar>
 
-    <v-main class="align-center d-flex h-100 justify-center">
+    <v-main class="d-flex h-100">
       <slot />
     </v-main>
     <v-footer>©{{ new Date().getFullYear() }} - Created by Theo</v-footer>
