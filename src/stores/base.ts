@@ -1,7 +1,7 @@
 import { getBase } from '@/utils/api/base'
 import type { BaseApi } from '@/utils/interface/base'
 import { defineStore } from 'pinia'
-import { reactive } from 'vue'
+import { computed, reactive } from 'vue'
 
 export const useBaseStore = defineStore('base', () => {
   interface Base {
@@ -37,5 +37,7 @@ export const useBaseStore = defineStore('base', () => {
     }
   }
 
-  return { base: base, getBaseData }
+  const baseData = computed(() => base.data)
+
+  return { base: baseData, getBaseData }
 })

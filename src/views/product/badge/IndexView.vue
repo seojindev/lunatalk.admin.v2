@@ -1,3 +1,3 @@
 <template>
-  <p>BadgeView</p>
+  <div>준비중</div>
 </template>

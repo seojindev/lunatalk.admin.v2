@@ -10,9 +10,6 @@ const baseStore = useBaseStore()
 onMounted(() => {
   baseStore.getBaseData()
 })
-watch(baseStore.base, (n, o) => {
-  console.log(n, o)
-})
 </script>
 
 <template>

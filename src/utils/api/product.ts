@@ -11,3 +11,7 @@ export function deleteCategory(uuid: string) {
 export function createCategory(name: string) {
   return instance.post('/api/admin-front/v1/product/create-product-category', { name })
 }
+
+export function getProductBadges() {
+  return instance.get('/api/admin-front/v1/product/show-product-badges')
+}

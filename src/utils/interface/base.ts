@@ -15,6 +15,6 @@ export interface BaseApi {
     category: Category[]
     color_options: ProductOption[]
     wireless_options: ProductOption[]
-    list: Product[]
+    list: Product[] | []
   } | null
 }

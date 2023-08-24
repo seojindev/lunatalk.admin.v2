@@ -36,10 +36,10 @@
       <ThemeToggleItem />
     </v-app-bar>
 
-    <v-main class="d-flex h-100">
+    <v-main class="d-flex">
       <slot />
     </v-main>
-    <v-footer>©{{ new Date().getFullYear() }} - Created by Theo</v-footer>
+    <!-- <v-footer>©{{ new Date().getFullYear() }} - Created by Theo</v-footer> -->
   </v-app>
 </template>
 
@@ -82,24 +82,24 @@ const list = {
         link: '/product/category',
         isActive: route.path === '/product/category'
       },
-      {
-        title: '배지',
-        icon: 'mdi-file-outline',
-        link: '/product/badge',
-        isActive: route.path === '/product/badge'
-      },
+      // {
+      //   title: '배지',
+      //   icon: 'mdi-file-outline',
+      //   link: '/product/badge',
+      //   isActive: route.path === '/product/badge'
+      // },
       {
         title: '상품',
         icon: 'mdi-file-outline',
         link: '/product/product',
         isActive: route.path === '/product/product'
-      },
-      {
-        title: '리뷰',
-        icon: 'mdi-file-outline',
-        link: '/product/review',
-        isActive: route.path === '/product/review'
       }
+      // {
+      //   title: '리뷰',
+      //   icon: 'mdi-file-outline',
+      //   link: '/product/review',
+      //   isActive: route.path === '/product/review'
+      // }
     ]
   },
   users: {

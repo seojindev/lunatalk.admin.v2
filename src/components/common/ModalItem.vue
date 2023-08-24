@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center d-flex align-center justify-center">
     <v-btn color="primary" @click="open"> {{ props.btnName }} </v-btn>
 
     <v-dialog v-model="dialog" width="500">
